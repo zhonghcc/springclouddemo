@@ -1,5 +1,6 @@
 package com.zhonghcc.cloud.surface.controller;
 
+import com.zhonghcc.cloud.backend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +11,15 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/order")
 public class OrderController{
 
+//    @Autowired
+//    RestTemplate restTemplate;
+
     @Autowired
-    RestTemplate restTemplate;
+    private OrderService orderService;
 
     @RequestMapping("/getList")
     public @ResponseBody String getList(){
-        return restTemplate.getForEntity("http://backend/add?a=10&b=10",String.class).getBody();
+        return orderService.getOrders().toString();
     }
 
 }

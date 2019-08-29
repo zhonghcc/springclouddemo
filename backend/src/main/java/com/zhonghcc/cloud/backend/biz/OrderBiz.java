@@ -1,6 +1,6 @@
 package com.zhonghcc.cloud.backend.biz;
 
-import com.zhonghcc.cloud.model.Order;
+import com.zhonghcc.cloud.backend.model.Order;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 
