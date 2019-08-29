@@ -1,6 +1,7 @@
 package com.zhonghcc.cloud.backend.service;
 
 import com.zhonghcc.cloud.backend.model.Order;
+import com.zhonghcc.cloud.common.model.ResponsePageVO;
 import com.zhonghcc.cloud.common.model.ResponseVO;
 import com.zhonghcc.cloud.common.rpc.FeignProtostuffConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -15,8 +16,8 @@ import java.util.List;
 @FeignClient(name="backend",configuration = FeignProtostuffConfiguration.class)
 public interface OrderService {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getOrders",consumes = "application/x-protobuf", produces = "application/x-protobuf")
-    List<Order> getOrders();
+    @RequestMapping(method = RequestMethod.GET, value = "/getOrders")
+    ResponsePageVO<Order> getOrders();
 
     @RequestMapping(method = RequestMethod.POST, value = "/update")
     ResponseVO<Order> update(Order order);

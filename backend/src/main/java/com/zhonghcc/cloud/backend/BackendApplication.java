@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 //@SpringCloudApplication
-@ComponentScan
+@ComponentScan(basePackages = "com.zhonghcc.cloud")
 @SpringBootApplication
 @EnableDiscoveryClient
 public class BackendApplication {

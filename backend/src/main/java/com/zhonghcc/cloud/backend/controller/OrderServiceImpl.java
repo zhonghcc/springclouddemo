@@ -3,6 +3,7 @@ package com.zhonghcc.cloud.backend.controller;
 import com.zhonghcc.cloud.backend.biz.OrderBiz;
 import com.zhonghcc.cloud.backend.model.Order;
 import com.zhonghcc.cloud.backend.service.OrderService;
+import com.zhonghcc.cloud.common.model.ResponsePageVO;
 import com.zhonghcc.cloud.common.model.ResponseVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,17 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderBiz orderBiz;
     @Override
-    public List<Order> getOrders() {
+    public ResponsePageVO<Order> getOrders() {
         log.info("getOrders");
-        return orderBiz.getOrderList();
+        List<Order> list = orderBiz.getOrderList();
+        ResponsePageVO<Order> responsePageVO = new ResponsePageVO<>();
+        responsePageVO.setData(list);
+        responsePageVO.setTotal(list.size());
+        responsePageVO.setPage(0);
+        responsePageVO.setPageSize(0);
+        responsePageVO.setSucess(true);
+        responsePageVO.setDesc("success");
+        return responsePageVO;
     }
 
     @Override

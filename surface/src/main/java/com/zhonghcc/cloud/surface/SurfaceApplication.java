@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@ComponentScan
-@EnableFeignClients(basePackages = "com.zhonghcc.cloud")
+@ComponentScan(basePackages = {"com.zhonghcc.cloud.surface","com.zhonghcc.cloud.common.rpc"})
+@EnableFeignClients(basePackages = "com.zhonghcc.cloud.backend")
 public class SurfaceApplication {
 
 //	@LoadBalanced
