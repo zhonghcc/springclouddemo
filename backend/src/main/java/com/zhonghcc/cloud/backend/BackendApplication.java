@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 //@SpringCloudApplication
 @ComponentScan(basePackages = "com.zhonghcc.cloud")
+//@ComponentScan
 @SpringBootApplication
 @EnableDiscoveryClient
 public class BackendApplication {

@@ -47,7 +47,7 @@ public class ProtostuffHttpMessageConverter extends AbstractGenericHttpMessageCo
     @Override
     protected Object readInternal(final Class<?> clazz, final HttpInputMessage inputMessage)
             throws IOException, HttpMessageNotReadableException {
-        log.info("readInternal content type={}",inputMessage.getHeaders().getContentType());
+        log.debug("readInternal content type={}",inputMessage.getHeaders().getContentType());
         if (MEDIA_TYPE.isCompatibleWith(inputMessage.getHeaders().getContentType())) {
 
 //            final Schema<?> schema = RuntimeSchema.getSchema(clazz);
@@ -73,7 +73,7 @@ public class ProtostuffHttpMessageConverter extends AbstractGenericHttpMessageCo
     @Override
     protected void writeInternal(Object object, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {
         MediaType contentType = outputMessage.getHeaders().getContentType();
-        log.info("current type:{}",contentType);
+        log.debug("current type:{}",contentType);
 
         OutputStream stream = null;
         long start = System.currentTimeMillis();
@@ -92,7 +92,7 @@ public class ProtostuffHttpMessageConverter extends AbstractGenericHttpMessageCo
             IOUtils.closeQuietly(stream);
         }
 
-        log.info("Output spend {}", System.currentTimeMillis()-start);
+        log.debug("Output spend {}", System.currentTimeMillis()-start);
 
 
     }

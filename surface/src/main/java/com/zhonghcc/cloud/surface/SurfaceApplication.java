@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.zhonghcc.cloud.surface","com.zhonghcc.cloud.common.rpc"})
+//@ComponentScan
 @EnableFeignClients(basePackages = "com.zhonghcc.cloud.backend")
 public class SurfaceApplication {
 

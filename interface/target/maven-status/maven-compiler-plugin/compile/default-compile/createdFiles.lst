@@ -2,7 +2,6 @@ com\zhonghcc\cloud\common\model\ResponseVO.class
 com\zhonghcc\cloud\common\model\CoolMessage.class
 com\zhonghcc\cloud\common\model\ResponsePageVO.class
 com\zhonghcc\cloud\backend\model\Order.class
-com\zhonghcc\cloud\backend\service\Order2Service.class
 com\zhonghcc\cloud\common\rpc\FeignProtostuffConfiguration.class
 com\zhonghcc\cloud\common\rpc\ProtostuffHttpMessageConverter.class
 com\zhonghcc\cloud\backend\service\OrderService.class
