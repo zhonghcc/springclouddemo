@@ -6,17 +6,19 @@
 https://github.com/zhonghcc/springclouddemo
 
 项目模块说明：
-eureka：注册中心
-interface：feign接口和公共model
-backend：服务提供者
-surface：表面层，服务消费者
+
+- eureka：注册中心
+- interface：feign接口和公共model
+- backend：服务提供者
+- surface：表面层，服务消费者
 
 实现方案
-feign + protostuff
-实现protostuff的HttpMessageConverter从而支持传输protobuf报文
-实现了GenericHttpMessageConverter从而支持泛型
-外层包装了通用信息格式以支持扩展（比如trace、服务间验证等）
-尚未对httpclient进行定制
+
+- feign + protostuff
+- 实现protostuff的HttpMessageConverter从而支持传输protobuf报文
+- 实现了GenericHttpMessageConverter从而支持泛型
+- 外层包装了通用信息格式以支持扩展（比如trace、服务间验证等）
+- TODO: 尚未对httpclient进行定制
 
 
 性能测试
