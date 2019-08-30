@@ -23,21 +23,22 @@ https://github.com/zhonghcc/springclouddemo
 测试报文
 
 protostuff
-
+```
 ??.com.zhonghcc.cloud.common.model.ResponsePageVOsuccess[?&com.zhonghcc.cloud.backend.model.Order绗竴涓鍗?绗竴涓鍗?欺鐓?(谯鐓?[?&com.zhonghcc.cloud.backend.model.Order绗簩涓鍗?绗簩涓鍗?谯鐓?(谯鐓?  (0 $cb785f68-adf9-4dcf-928e-5e99dbfdbd2e
-
+```
 json
-
+```
 {"sucess":true,"desc":"success","data":[{"instructionId":1,"name":"第一个订单","desc":"第一个订单","createTime":1567138997473,"updateTime":1567138997492},{"instructionId":2,"name":"第二个订单","desc":"第二个订单","createTime":1567138997492,"updateTime":1567138997492}],"page":0,"total":2,"pageSize":0}
+```
 
 message标准封装
 
 ```
 @Data
 public class CoolMessage {
-    Object data;
-    String uuid;
-    String token;
+    Object data;//实际报文
+    String uuid;//traceid
+    String token;//authid
 }
 ```
 
